@@ -1,6 +1,6 @@
 {
   "name": "@reyura/medusa-file-gcs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "GCS file connector for Medusa",
   "main": "dist/index.js",
   "files": [

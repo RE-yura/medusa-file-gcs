@@ -23,6 +23,8 @@
   GCS_PRIVATE_BUCKET=<GCS_PRIVATE_BUCKET>
   GCS_EMAIL=<GCS_EMAIL>
   GCS_PRIVATE_KEY=<GCS_PRIVATE_KEY>
+  GCS_PRIVATE_EMAIL=<GCS_PRIVATE_EMAIL>
+  GCS_PRIVATE_PRIVATE_KEY=<GCS_PRIVATE_PRIVATE_KEY>
   ```
 
 3\. In `medusa-config.js` add the following at the end of the `plugins` array:
@@ -37,9 +39,9 @@
         bucketName: process.env.GCS_BUCKET,
         privatebucketName: process.env.GCS_PRIVATE_BUCKET,
         email: process.env.GCS_EMAIL,
-        privateKey: process.env.GCS_PRIVATE_KEY,
-        privateEmail: process.env.GCS_EMAIL,
-        privatePrivateKey: process.env.GCS_PRIVATE_KEY,
+        privateKey: process.env.GCS_PRIVATE_KEY.replace(/\\n/g, "\n"),
+        privateEmail: process.env.GCS_PRIVATE_EMAIL,
+        privatePrivateKey: process.env.GCS_PRIVATE_PRIVATE_KEY.replace(/\\n/g, "\n"),
       },
     },
   ]

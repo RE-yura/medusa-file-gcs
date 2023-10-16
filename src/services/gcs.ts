@@ -52,8 +52,8 @@ class GcpStorageService extends AbstractFileService implements IFileService {
     return new Storage({
       projectId: this.projectId,
       credentials: {
-        client_email: usePrivateBucket ? this.email : this.privateEmail,
-        private_key: usePrivateBucket ? this.privateKey : this.privatePrivateKey,
+        client_email: usePrivateBucket ? this.privateEmail : this.email,
+        private_key: usePrivateBucket ? this.privatePrivateKey : this.privateKey,
       },
     });
   }
